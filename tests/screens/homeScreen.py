@@ -11,6 +11,7 @@ class HomeScreen(Base):
         nav = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, label)
         
         assert nav.is_displayed()
+        assert nav.is_enabled()
         nav.click()
         
         self.driver.back()

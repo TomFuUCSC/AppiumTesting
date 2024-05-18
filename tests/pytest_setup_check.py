@@ -1,7 +1,5 @@
 import pytest
-from appium.webdriver.common.appiumby import AppiumBy
 from screens.homeScreen import HomeScreen as onHomeScreen
-# from screens.mediaScreen import MediaScreen as onMediaScreen
 
 
 """
