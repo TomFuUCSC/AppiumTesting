@@ -10,8 +10,9 @@ class Device:
     
 class Project:
     appium_server_url = 'http://127.0.0.1:4723'
-    app = '/Users/pablovergara/Desktop/automation/hyacinth/apps/android/ApiDemos-debug.apk'
-    name = "Android Pytest"
+    android_app = '/Users/pablovergara/Desktop/automation/hyacinth/apps/android/ApiDemos-debug.apk'
+    ios_app = '/Users/pablovergara/Desktop/automation/hyacinth/apps/ios/TAU/TAU.xcodeproj'
+    name = "Appium w. Pytest"
     
     
 class HomeScreen:

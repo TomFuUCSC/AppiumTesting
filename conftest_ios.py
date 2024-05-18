@@ -4,16 +4,16 @@ from appium import webdriver
 from utils.data import Project
 from appium.options.android import UiAutomator2Options
 
-
+    
 @pytest.fixture(scope='function')
-def test_setup_android(request):
+def test_setup_ios(request):
     test_name = request.node.name
-    build = environ.get('BUILD', "Pytest Android Sample")
+    build = environ.get('BUILD', "Pytest iOS Sample")
     caps = {}
-    caps["deviceName"] = 'Pixel_6_Pro'
-    caps["platformName"] = 'Android'
-    caps["platformVersion"] = '13'
-    caps["app"] = f"{Project.android_app}"
+    caps["deviceName"] = 'iPhone 15 Pro Max'
+    caps["platformName"] = 'iOS'
+    caps["platformVersion"] = '17.2'
+    caps["app"] = f"{Project.ios_app}"
     caps["isRealMobile"] = True
     caps['project'] = f"{Project.name}"
     caps['build'] = build
