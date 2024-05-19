@@ -13,12 +13,13 @@ def test_setup_android(request):
     caps["deviceName"] = 'Pixel_6_Pro'
     caps["platformName"] = 'Android'
     caps["platformVersion"] = '13'
+    caps["automationName"] = 'UiAutomator2'
     caps["app"] = f"{Project.android_app}"
     caps["isRealMobile"] = True
     caps['project'] = f"{Project.name}"
     caps['build'] = build
     caps['name'] = test_name
-    driver = webdriver.Remote(Project.appium_server_url, options=UiAutomator2Options().load_capabilities(caps))
+    driver = webdriver.Remote(f"{Project.appium_server_url}", options=UiAutomator2Options().load_capabilities(caps))
     request.cls.driver = driver
     
     yield driver

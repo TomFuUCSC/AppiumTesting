@@ -1,24 +1,22 @@
-class Device:
-    name = 'Pixel_6_Pro'
-    platformName = 'Android',
-    platformVersion = '13',
-    name = 'Pixel_6_Pro',
-    automationName = 'uiautomator2',
-    language = 'en',
-    locale = 'US'
-    
-    
 class Project:
     appium_server_url = 'http://127.0.0.1:4723'
     android_app = '/Users/pablovergara/Desktop/automation/hyacinth/apps/android/ApiDemos-debug.apk'
-    ios_app = '/Users/pablovergara/Desktop/automation/hyacinth/apps/ios/TAU/TAU.xcodeproj'
+    ios_app = '/Users/pablovergara/Desktop/automation/hyacinth/apps/ios/UIKitCatalog-iphonesimulator.app'
     name = "Appium w. Pytest"
     
     
-class HomeScreen:
+class AndroidHomeScreen:
     buttons = [
         "Access'ibility", 'Accessibility', 'Animation', 'App', 'Content', 'Graphics', 
         'Media', 'NFC', 'OS', 'Preference', 'Text', 'Views']
+    
+    
+class iOSHomeScreen:
+    buttons = [
+        "Activity Indicators", "Alert Views", "Buttons", "Date Picker",
+        "Image View", "Page Control", "Picker View", "Progress Views",
+        "Search", "Segmented Controls", "Sliders", "Stack Views",
+        "Steppers", "Switches", "Text Fields", "Toolbars", "Web View"]
     
     
 class Accessibility:

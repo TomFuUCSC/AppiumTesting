@@ -1,6 +1,6 @@
 import pytest
 from screens.homeScreen import HomeScreen as onHomeScreen
-from utils.data import HomeScreen, Accessibility
+from utils.data import AndroidHomeScreen, Accessibility
 from helpers.app_actions import AppAction
 
 
@@ -12,7 +12,7 @@ APPIUM WITH PYTEST SET UP SCRIPT
 @pytest.mark.usefixtures('test_setup_android')
 class TestHomeNavigation:
     def test_navigate_home_screen(self): 
-        for button in HomeScreen.buttons:
+        for button in AndroidHomeScreen.buttons:
             onHomeScreen.select_option(self, button)
             self.driver.back()
             

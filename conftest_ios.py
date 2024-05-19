@@ -2,7 +2,7 @@ import pytest
 from os import environ
 from appium import webdriver
 from utils.data import Project
-from appium.options.android import UiAutomator2Options
+from appium.options.ios import XCUITestOptions
 
     
 @pytest.fixture(scope='function')
@@ -14,11 +14,12 @@ def test_setup_ios(request):
     caps["platformName"] = 'iOS'
     caps["platformVersion"] = '17.2'
     caps["app"] = f"{Project.ios_app}"
+    caps["automationName"] = 'XCUITest'
     caps["isRealMobile"] = True
     caps['project'] = f"{Project.name}"
     caps['build'] = build
     caps['name'] = test_name
-    driver = webdriver.Remote(Project.appium_server_url, options=UiAutomator2Options().load_capabilities(caps))
+    driver = webdriver.Remote(f"{Project.appium_server_url}", options=XCUITestOptions().load_capabilities(caps))
     request.cls.driver = driver
     
     yield driver
