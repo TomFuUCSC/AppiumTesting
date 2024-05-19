@@ -17,9 +17,9 @@ Directions
 5. Launch appium server
 6. Launch the device emulator(s)
 7. For android, run the script: `../tests/android/pytest_setup_check.py`(be mindful of the imports from other directories)
-8. For ios, run the script: `../tests//ios/pytest_ios_setup.py` (be mindful of the imports from other directories)
+8. For ios, run the script: `../tests/ios/pytest_ios_setup.py` (be mindful of the imports from other directories)
 
 
 Demo Apps
 1. For Android, `../apps/android/ApiDemos-debug.apk`
-2. For iOS, `UIKitCatalog-iphonesimulator.app`
+2. For iOS, ``../apps/ios/UIKitCatalog-iphonesimulator.app`
