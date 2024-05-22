@@ -1,5 +1,5 @@
 import pytest
-from screens.homeScreen import HomeScreen as onHomeScreen
+from screens.android.homeScreen import HomeScreen as onHomeScreen
 from utils.data import AndroidHomeScreen, Accessibility
 from helpers.app_actions import AppAction
 
