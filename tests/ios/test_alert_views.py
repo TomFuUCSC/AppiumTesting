@@ -41,20 +41,38 @@ class TestAlertViews:
         onAlertViewsScreen.select_alert_view(self, 'Other')
         onAlertViewsScreen.select_alert_view(self, 'Cancel')
         
-    #TODO - Fix this test, fails due to input not being found by xpath
     def test_text_entry_alert_view(self):
+        text_input = "//XCUIElementTypeTextField"
+        text_value = "this is a test case"
+
         onHomeScreen.select_option(self, 'Alert Views')
         onAlertViewsScreen.select_alert_view(self, 'Text Entry')
-        onAlertViewsScreen.submit_text_in_alert_input(self, 'this is my ios appium test')
+        onAlertViewsScreen.submit_text_in_alert_input(self, text_input, text_value)
         onAlertViewsScreen.click_on_alert_action(self, 'OK')
     
-    # def test_secure_text_entry_alert_view(self):
-    #     pass
+    def test_secure_text_entry_alert_view(self):
+        text_input = "//XCUIElementTypeSecureTextField"
+        text_value = "password"
+
+        onHomeScreen.select_option(self, 'Alert Views')
+        onAlertViewsScreen.select_alert_view(self, 'Secure Text Entry')
+        onAlertViewsScreen.submit_text_in_alert_input(self, text_input, text_value)
+        onAlertViewsScreen.click_on_alert_action(self, 'OK')
     
-    # """ACTION SHEETS"""
+    """ACTION SHEETS"""
     
-    # def test_confirm_cancel_alert_view(self):
-    #     pass
+    def test_confirm_cancel_alert_action(self):
+        onHomeScreen.select_option(self, 'Alert Views')
+        onAlertViewsScreen.select_alert_view(self, 'Confirm / Cancel')
+        onAlertViewsScreen.click_action_on_sheet(self, 'Confirm')
+        
+        onAlertViewsScreen.select_alert_view(self, 'Confirm / Cancel')
+        onAlertViewsScreen.click_action_on_sheet(self, 'Cancel')
     
-    # def test_destructive_alert_view(self):
-    #     pass
+    def test_destructive_alert_action(self):
+        onHomeScreen.select_option(self, 'Alert Views')
+        onAlertViewsScreen.select_alert_view(self, 'Destructive')
+        onAlertViewsScreen.click_action_on_sheet(self, 'Destructive Choice')
+        
+        onAlertViewsScreen.select_alert_view(self, 'Destructive')
+        onAlertViewsScreen.click_action_on_sheet(self, 'Safe Choice')
