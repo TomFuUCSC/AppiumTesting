@@ -15,6 +15,10 @@ class AppAction(Base):
         nav.click()
         time.sleep(0.5)
         
+    def confirm_element_is_visible(self, element):
+        el = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, f"{element}")
+        assert el.is_displayed()
+        
     def alert_is_visible(self, alert):
         popup = self.driver.find_element(AppiumBy.XPATH, f"{alert}")
         assert popup.is_displayed()
@@ -27,6 +31,10 @@ class AppAction(Base):
         button = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, f"{action}")
         assert button.is_displayed()
         assert button.is_enabled()
+        button.click()
+        
+    def dismiss_popover(self, action):
+        button = self.driver.find_element(AppiumBy.XPATH, f"{action}")
         button.click()
         
     def sheet_action(self, action):
