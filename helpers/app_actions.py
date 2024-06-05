@@ -13,10 +13,21 @@ class AppAction(Base):
         assert nav.is_displayed()
         assert nav.is_enabled()
         nav.click()
+        time.sleep(0.25)
+        
+    def click_button_by_id(self, id):
+        nav = self.driver.find_element(AppiumBy.ID, f"{id}")
+        assert nav.is_displayed()
+        assert nav.is_enabled()
+        nav.click()
         time.sleep(0.5)
         
     def confirm_element_is_visible(self, element):
         el = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, f"{element}")
+        assert el.is_displayed()
+        
+    def confirm_element_by_ID_is_visible(self, element_id):
+        el = self.driver.find_element(AppiumBy.ID, f"{element_id}")
         assert el.is_displayed()
         
     def alert_is_visible(self, alert):
